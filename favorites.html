@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favori Ürünlerim</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Favori Ürünlerim</h1>
+        <div class="top-buttons">
+            <a href="index.html" class="home-button">Ana Sayfa</a>
+            <a href="search.html" class="search-button">Ürün Arama</a>
+            <a href="settings.html" class="settings-button">Ayarlar</a>
+            <div id="authButtons">
+                <a href="auth.html" class="auth-button">Giriş Yap / Kayıt Ol</a>
+                <button id="logoutButton" class="logout-button" style="display: none;">Çıkış Yap</button>
+            </div>
+            <button id="clearFavoritesButton" class="clear-favorites-button">Tüm Favorileri Temizle</button>
+        </div>
+        
+        <div id="favoritesContainer" class="products-grid">
+            <p>Favori ürünler yükleniyor...</p>
+        </div>
+    </div>
+
+    <script src="common.js"></script>
+    <script src="product-utils.js"></script>
+    <script src="favorites-manager.js"></script>
+    <script src="db.js"></script>
+    <script src="favorites.js"></script>
+</body>
+</html>

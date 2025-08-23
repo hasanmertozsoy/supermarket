@@ -1,0 +1,54 @@
+services:
+  # PHP Web Sunucusu (Apache ile)
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile.php
+    container_name: supermarket-php
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
+      - ./cache:/var/www/html/cache
+    depends_on:
+      - nodejs
+    networks:
+      - supermarket-network
+    restart: unless-stopped
+
+  # Node.js API Sunucusu
+  nodejs:
+    build:
+      context: .
+      dockerfile: Dockerfile.nodejs
+    container_name: supermarket-nodejs
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/supermarket_db
+      - ENCRYPTION_KEY=supermarketapp123456789012345678901
+    depends_on:
+      - mongo
+    networks:
+      - supermarket-network
+    restart: unless-stopped
+
+  # MongoDB Veritabanı
+  mongo:
+    image: mongo:6
+    container_name: supermarket-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data/db
+    networks:
+      - supermarket-network
+    restart: unless-stopped
+
+networks:
+  supermarket-network:
+    driver: bridge
+
+volumes:
+  mongodb-data:
+    driver: local 

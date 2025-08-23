@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayarlar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container settings-container">
+        <h1>Ayarlar</h1>
+        <div class="top-buttons">
+            <a href="index.html" class="home-button">Ana Sayfa</a>
+            <a href="search.html" class="search-button">Ürün Arama</a>
+            <a href="favorites.html" class="favorites-button">Favori Ürünlerim</a>
+            <div id="authButtons">
+                <a href="auth.html" class="auth-button">Giriş Yap / Kayıt Ol</a>
+                <button id="logoutButton" class="logout-button" style="display: none;">Çıkış Yap</button>
+            </div>
+        </div>
+        
+        <div class="settings-content">
+            <h2>Görünüm Ayarları</h2>
+            
+            <div class="settings-group">
+                <label for="fontSizeSlider">Font Büyüklüğü</label>
+                <div class="slider-container">
+                    <input type="range" id="fontSizeSlider" min="12" max="20" step="1" value="16">
+                    <span id="fontSizeValue">16px</span>
+                </div>
+            </div>
+            
+            <div class="settings-group">
+                <label for="darkModeToggle">Karanlık Tema</label>
+                <div class="toggle-container">
+                    <input type="checkbox" id="darkModeToggle" class="toggle-input">
+                    <label for="darkModeToggle" class="toggle-label"></label>
+                </div>
+            </div>
+            
+            <div class="settings-group">
+                <button id="saveSettingsButton" class="settings-save-button">Ayarları Kaydet</button>
+                <button id="resetSettingsButton" class="settings-reset-button">Varsayılana Sıfırla</button>
+            </div>
+            
+            <div id="settingsMessage" class="settings-message"></div>
+        </div>
+    </div>
+
+    <script src="common.js"></script>
+    <script src="db.js"></script>
+    <script src="settings.js"></script>
+</body>
+</html> 

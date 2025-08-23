@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Süpermarket Ürün Arama</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Süpermarket Ürün Arama</h1>
+        <div id="welcomeMessage">
+            <p>Hoş geldin <span id="userName">Ziyaretçi</span>!</p>
+        </div>
+        <div class="top-buttons">
+            <a href="search.html" class="search-button">Ürün Arama</a>
+            <a href="favorites.html" class="favorites-button">Favori Ürünlerim</a>
+            <a href="settings.html" class="settings-button">Ayarlar</a>
+            <div id="authButtons">
+                <a href="auth.html" class="auth-button">Giriş Yap / Kayıt Ol</a>
+                <button id="logoutButton" class="logout-button" style="display: none;">Çıkış Yap</button>
+            </div>
+        </div>
+        
+        <div class="tip-cards">
+            <div class="tip-card">
+                <h3>Ürün Arama</h3>
+                <p>Ürün araması yapmak için "Ürün Arama" butonuna tıklayın. İsim, marka veya kategoriye göre arama yapabilirsiniz.</p>
+            </div>
+            <div class="tip-card">
+                <h3>Favoriler</h3>
+                <p>Beğendiğiniz ürünleri ♥ simgesine tıklayarak favorilerinize ekleyebilirsiniz. Favori ürünlerinizi "Favori Ürünlerim" sayfasında görüntüleyebilirsiniz.</p>
+            </div>
+            <div class="tip-card">
+                <h3>Ayarlar</h3>
+                <p>Font büyüklüğü, karanlık tema gibi arayüz ayarlarını değiştirmek için "Ayarlar" sayfasını kullanabilirsiniz.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="common.js"></script>
+    <script src="db.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün Arama</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Ürün Arama</h1>
+        <div class="top-buttons">
+            <a href="index.html" class="home-button">Ana Sayfa</a>
+            <a href="favorites.html" class="favorites-button">Favori Ürünlerim</a>
+            <a href="settings.html" class="settings-button">Ayarlar</a>
+            <div id="authButtons">
+                <a href="auth.html" class="auth-button">Giriş Yap / Kayıt Ol</a>
+                <button id="logoutButton" class="logout-button" style="display: none;">Çıkış Yap</button>
+            </div>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Ürün adı girin (örn: şeker, süt, ekmek)">
+            <select id="sortSelect">
+                <option value=""selected>Sıralama Yok</option>
+                <option value="price-asc">En Düşük Fiyat</option>
+                <option value="specUnit-asc">En Düşük Birim Fiyat</option>
+            </select>
+            <button id="searchButton" class="filter-button">Ara</button>
+        </div>
+
+        <div class="filter-container">
+            <h3>Filtreler</h3>
+            <div class="filter-options">
+                <div class="filter-group">
+                    <label for="brandFilter">Marka:</label>
+                    <select id="brandFilter">
+                        <option value="">Tüm Markalar</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="priceMinFilter">Min Fiyat:</label>
+                    <input type="number" id="priceMinFilter" min="0" step="1" placeholder="TL">
+                </div>
+                <div class="filter-group">
+                    <label for="priceMaxFilter">Max Fiyat:</label>
+                    <input type="number" id="priceMaxFilter" min="0" step="1" placeholder="TL">
+                </div>
+                <div class="filter-group">
+                    <label for="unitPriceMinFilter">Min Birim Fiyat:</label>
+                    <input type="number" id="unitPriceMinFilter" min="0" step="0.01" placeholder="TL/kg">
+                </div>
+                <div class="filter-group">
+                    <label for="unitPriceMaxFilter">Max Birim Fiyat:</label>
+                    <input type="number" id="unitPriceMaxFilter" min="0" step="0.01" placeholder="TL/kg">
+                </div>
+                <button id="applyFiltersButton" class="filter-button">Filtrele</button>
+                <button id="resetFiltersButton" class="filter-reset-button">Sıfırla</button>
+            </div>
+        </div>
+
+        <div id="resultsCount"></div>
+        <div id="productsContainer">
+            <p>Lütfen bir arama terimi girin.</p>
+        </div>
+
+        <div class="pagination-container">
+            <button id="prevPageButton" disabled>Önceki Sayfa</button>
+            <span id="currentPageSpan">Sayfa: -</span>
+            <button id="nextPageButton" disabled>Sonraki Sayfa</button>
+        </div>
+    </div>
+
+    <script src="common.js"></script>
+    <script src="product-utils.js"></script>
+    <script src="favorites-manager.js"></script>
+    <script src="db.js"></script>
+    <script src="search.js"></script>
+</body>
+</html> 

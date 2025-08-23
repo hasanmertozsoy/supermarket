@@ -1,0 +1,21 @@
+FROM node:18-alpine
+
+WORKDIR /usr/src/app
+
+# package.json ve package-lock.json dosyalarını kopyala
+COPY server/package*.json ./
+
+# Bağımlılıkları yükle
+RUN npm install
+
+# Kaynak kodları kopyala
+COPY server/ ./
+
+# Ortam değişkenlerini ayarla
+ENV PORT=3000
+ENV MONGODB_URI=mongodb://mongo:27017/supermarket_db
+ENV ENCRYPTION_KEY=supermarketapp123456789012345678901
+
+EXPOSE 3000
+
+CMD ["npm", "start"] 

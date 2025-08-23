@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş / Kayıt</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container auth-container">
+        <h1>Giriş Yap Veya Kayıt Ol</h1>
+        <div class="top-buttons">
+            <a href="index.html" class="back-to-home-button">Ana Sayfaya Dön</a>
+        </div>
+        
+        <div class="auth-forms">
+            <div class="auth-form" id="loginForm">
+                <h2>Giriş Yap</h2>
+                <form id="loginFormElement">
+                    <div class="form-group">
+                        <label for="loginEmail">E-posta:</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Şifre:</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="auth-submit-button">Giriş Yap</button>
+                </form>
+                <p class="switch-form-text">Hesabınız yok mu? <a href="#" id="showRegisterForm">Kayıt Olun</a></p>
+                <div id="loginMessage" class="auth-message"></div>
+            </div>
+            
+            <div class="auth-form" id="registerForm" style="display: none;">
+                <h2>Hesap Oluştur</h2>
+                <form id="registerFormElement">
+                    <div class="form-group">
+                        <label for="registerName">Ad Soyad:</label>
+                        <input type="text" id="registerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">E-posta:</label>
+                        <input type="email" id="registerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Şifre:</label>
+                        <input type="password" id="registerPassword" required minlength="6">
+                        <small>Şifreniz en az 6 karakter olmalıdır</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPasswordConfirm">Şifre Tekrar:</label>
+                        <input type="password" id="registerPasswordConfirm" required minlength="6">
+                    </div>
+                    <button type="submit" class="auth-submit-button">Kayıt Ol</button>
+                </form>
+                <p class="switch-form-text">Zaten hesabınız var mı? <a href="#" id="showLoginForm">Giriş Yapın</a></p>
+                <div id="registerMessage" class="auth-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="common.js"></script>
+    <script src="db.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html> 
