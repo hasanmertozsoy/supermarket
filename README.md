@@ -1,7 +1,3 @@
-# Supermarket Uygulaması - Docker Kurulumu
-
-Bu doküman, Supermarket uygulamasının Docker ortamında nasıl çalıştırılacağını açıklar.
-
 ## Gereksinimler
 
 - Docker
